@@ -33,8 +33,8 @@ def total_salary(path:str):
         return total, average
 
 
-    except Exception:
-        print('Файл не знайдено')
+    except Exception as e :
+        print('Файл не знайдено : {e}')
 
         return 0, 0
 
