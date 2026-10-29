@@ -1,21 +1,3 @@
-def total_salary(path):
-    try:
-        with open(path, "r", encoding="utf-8") as file:
-            salaries = [int(line.split(",")[1]) for line in file if line.strip()]
-    except (OSError, ValueError, IndexError):
-        print(f"Файл {path} не знайдено або він пошкоджений")
-        return 0, 0
-
-    total = sum(salaries)
-    return total, (total / len(salaries) if salaries else 0)
-
-
-total, average = total_salary("salary_file.txt")
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
-
-
-
-
 def total_salary(path:str):
     total = 0
     count = 0
@@ -38,7 +20,7 @@ def total_salary(path:str):
 
         return 0, 0
 
-total, average = total_salary('path/to/cats_file.txt')
+total, average = total_salary('path/to/salary_file.txt')
 
 print(f"Загальна сума заробітної плати: {total}")
 print(f"Середня заробітна плата: {average}")
