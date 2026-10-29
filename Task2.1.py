@@ -4,7 +4,7 @@ def get_cats_info(path: str) -> list:
     try:
         with open(path, 'r', encoding='utf-8') as file:
             for line in file:
-                cat_id, cat_name, cat_age = line.split(',')
+                cat_id, cat_name, cat_age = line.strip().split(',')
 
                 cat = {
                     'id': cat_id,
